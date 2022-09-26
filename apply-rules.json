@@ -1,0 +1,63 @@
+{
+	"name": "Rule 1",
+	"case": "any",
+	"rules": [
+		{
+			"field": "from",
+			"predicate": "contains",
+			"enabled": true,
+			"value": "Panda <noreply@usepanda.com>"
+		},
+		{
+			"field": "to",
+			"predicate": "contains",
+			"enabled": true,
+			"value": "gcshivathanu@gmail.com"
+		},
+		{
+			"field": "subject",
+			"predicate": "contains",
+			"enabled": true,
+			"value": "Panda"
+		},
+		{
+			"field": "message",
+			"predicate": "contains",
+			"enabled": true,
+			"value": "feedback"
+		},
+		{
+			"field": "received",
+			"predicate": "less_than_days",
+			"enabled": true,
+			"value": "2"
+		},
+		{
+			"field": "received",
+			"predicate": "less_than_months",
+			"enabled": false,
+			"value": "2"
+		},
+		{
+			"field": "received",
+			"predicate": "greater_than_days",
+			"enabled": false,
+			"value": "2"
+		},
+		{
+			"field": "received",
+			"predicate": "greater_than_months",
+			"enabled": false,
+			"value": "2"
+		}
+	],
+	"actions": [
+		{
+			"name": "move",
+			"value": "Inbox"
+		},
+        {
+			"name": "mark_as_unread"
+		}
+	]
+}

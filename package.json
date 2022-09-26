@@ -1,0 +1,30 @@
+{
+  "name": "email-client-cli",
+  "version": "1.0.0",
+  "description": "Email Client library to fetch gmail information based on rules",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "load-inbox": "node load-inbox.js",
+    "apply-rules": "node apply-rules.js"
+  },
+  "keywords": [
+    "Gmail",
+    "OAuth",
+    "Email",
+    "rules"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
+    "lodash": "^4.17.21",
+    "mariadb": "^3.0.1",
+    "moment": "^2.29.4",
+    "qs": "^6.11.0"
+  },
+  "engines": {
+    "node": ">=16.17.0"
+  }
+}

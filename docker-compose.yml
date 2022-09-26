@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  email-client-db:
+    platform: linux/x86_64
+    image: mysql:8.0.20
+    container_name: email-client-db
+    build:
+      context: docker/
+      dockerfile: Dockerfile
+    volumes:
+      - .data/db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_ENTRYPOINT_INITDB=./docker/db/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    ports:
+      - '3356:3306'
